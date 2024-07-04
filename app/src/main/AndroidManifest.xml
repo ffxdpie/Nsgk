@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NSgk"
+        tools:targetApi="31">
+        <activity
+            android:name=".Activity_workingconditiondiagram"
+
+            android:exported="false"
+            tools:ignore="DiscouragedApi" />
+            <!-- android:theme="@style/Theme.App.NoStatusBar" 隐藏该activate的状态栏 -->
+            <!--android:screenOrientation="landscape" 设置该activaty始终横向-->
+        <activity
+            android:name=".WorksElect"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name=".weightActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name=".activity_main"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"> <!-- 将 MainActivity 设置为默认启动的 Activity，并设置为导出 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
