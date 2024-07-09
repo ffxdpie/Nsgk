@@ -24,8 +24,9 @@
     <string name="workingbutton">刷新</string>
     <string name="editTextnumber2">角度</string>
     <string name="textviewworkgram">角度</string>
-    <string name="todo3333">TODO</string>
-    <string name="todo444">TODO</string>
-    <string name="todo333">TODO</string>
-    <string name="todo2222">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button4_fragment">计算起重量</string>
+    <string name="input">输入</string>
+    <string name="Liftingweightcalculation">起重量计算</string>
 </resources>

@@ -26,7 +26,6 @@ public class activity_main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageButton imageButton1 = findViewById(R.id.imageButton1);
         ImageButton imageButton2 = findViewById(R.id.imageButton2);
-        ImageButton imageButton3 = findViewById(R.id.imageButton3);
         ImageButton imageButton = findViewById(R.id.imageButton);
         editTextNumber = findViewById(R.id.editTextNumber);
         textView = findViewById(R.id.textView);
@@ -69,33 +68,11 @@ public class activity_main extends AppCompatActivity {
             }else {
                 int workingCondition = Integer.parseInt(gk);
                 intent.putExtra("workingCondition", workingCondition);
-                intent.putExtra("angle", 0);
                 startActivity(intent); // 启动新的 Activity
             }
         }
         );
 
-
-        imageButton3.setOnClickListener(new  View.OnClickListener(){
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                gk = editTextNumber.getText().toString();
-                wkt = dbHelper.WorkingType(gk);
-                Log.d(TAG, "gk =" +gk);
-                Log.d(TAG, "wkt: "+ wkt);
-                if (wkt == null){
-                    Toast.makeText(activity_main.this, "工况输入不正确", Toast.LENGTH_SHORT).show();
-                }else {
-                    String rt = wkt.rotationDescription;
-                    String cw = wkt.counterweightDescription;
-                    String ot = wkt.outriggerDescription;
-                    String rc = wkt.counterweightReach;
-                    textView.setText(rt +"\n\n"+cw+"\n\n"+ot+"\n\n"+rc);
-                }
-            }
-        }
-        );
     }
 
     //数据持久化

@@ -199,45 +199,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return gkValues;
     }
-   //获取工况的信息
-   @SuppressLint("Range")
-   public Workingconditiontype WorkingType(String gk) {
-       SQLiteDatabase db = null;
-       Workingconditiontype result = null;  // 返回 null 表示未找到数据
-       try {
-           db = this.getReadableDatabase();
-           Cursor cursor = db.rawQuery("SELECT * FROM gk WHERE gk = ?", new String[]{gk});
-           if (cursor.moveToFirst()) {
-               int rcdistance = cursor.getInt(cursor.getColumnIndex("rcdistance"));
-               int otype = cursor.getInt(cursor.getColumnIndex("Otype"));
-               int cwtype = cursor.getInt(cursor.getColumnIndex("Cwtype"));
-               int rtype = cursor.getInt(cursor.getColumnIndex("Rtype"));
 
-               result = new Workingconditiontype(rcdistance, otype, cwtype,rtype);
-           }
-           cursor.close();
-       } catch (Exception e) {
-           Log.e(TAG, "数据查询错误: " + e.getMessage());
-       } finally {
-           if (db != null) {
-               db.close();
-           }
-       }
-       return result;
-   }
+    //获取工况的信息
+    @SuppressLint("Range")
+    public Workingconditiontype WorkingType(String gk) {
+        SQLiteDatabase db = null;
+        Workingconditiontype result = null;  // 返回 null 表示未找到数据
+        try {
+            db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT * FROM gk WHERE gk = ?", new String[]{gk});
+            if (cursor.moveToFirst()) {
+                int rcdistance = cursor.getInt(cursor.getColumnIndex("rcdistance"));
+                int otype = cursor.getInt(cursor.getColumnIndex("Otype"));
+                int cwtype = cursor.getInt(cursor.getColumnIndex("Cwtype"));
+                int rtype = cursor.getInt(cursor.getColumnIndex("Rtype"));
 
-
+                result = new Workingconditiontype(rcdistance, otype, cwtype, rtype);
+            }
+            cursor.close();
+        } catch (Exception e) {
+            Log.e(TAG, "数据查询错误: " + e.getMessage());
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+        return result;
+    }
 
 
     // 根据角度和吊臂距离得到每个角度起重量
     @SuppressLint("Range")
-    public ArrayList<Double> getAngleByWorking(int angle, int working) {
+    public ArrayList<Double> getAngularWeight(int angle, int working) {
         SQLiteDatabase db = null;
         ArrayList<Double> angleValues = new ArrayList<>();
         try {
             db = this.getReadableDatabase();
             String angleColumn = "angle" + angle;
-            String query = "SELECT " + angleColumn + " FROM NSgkmax WHERE Working = ?";
+            String query = "SELECT " + angleColumn + " FROM NSgk_Max WHERE Working = ?";
             Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(working)});
 
             while (cursor.moveToNext()) {
@@ -251,7 +250,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             cursor.close();
         } catch (Exception e) {
-            Log.e(TAG, "Error querying database: " + e.getMessage());
+            Log.e(TAG, "查询错误: " + e.getMessage());
         } finally {
             if (db != null) {
                 db.close();
@@ -260,4 +259,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return angleValues;
     }
 
+    public ArrayList<Double> getDistancesWeight(int distances, int working) {
+
+        SQLiteDatabase db = null;
+        ArrayList<Double> distancesValues = new ArrayList<>();
+        db = this.getReadableDatabase();
+
+        String query = "SELECT angle0, angle1, angle2, angle3, angle4, angle5, angle6, angle7, angle8, angle9, "
+                + "angle10, angle11, angle12, angle13, angle14, angle15, angle16, angle17, angle18, angle19, "
+                + "angle20, angle21, angle22, angle23, angle24, angle25, angle26, angle27, angle28, angle29, "
+                + "angle30, angle31, angle32, angle33, angle34, angle35, angle36, angle37, angle38, angle39, "
+                + "angle40, angle41, angle42, angle43, angle44, angle45, angle46, angle47, angle48, angle49, "
+                + "angle50, angle51, angle52, angle53, angle54, angle55, angle56, angle57, angle58, angle59, "
+                + "angle60, angle61, angle62, angle63, angle64, angle65, angle66, angle67, angle68, angle69, "
+                + "angle70, angle71, angle72, angle73, angle74, angle75, angle76, angle77, angle78, angle79, "
+                + "angle80, angle81, angle82, angle83, angle84, angle85, angle86, angle87, angle88, angle89, angle90 "
+                + "FROM NSgk_Max WHERE Working = ? AND distance = ?";
+
+//        String query = "SELECT angle0,angle2,angle5,angle10,angle15,angle20,angle25,angle30,angle45,angle60, angle90 FROM NSgk WHERE Working = ? AND distance = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{ String.valueOf(working),String.valueOf(distances)});
+
+        if (cursor.moveToFirst()) {
+            for (int i = 0; i < cursor.getColumnCount(); i++) {
+                distancesValues.add(cursor.getDouble(i));
+                Log.d("dis", "getDistancesWeight: "+ distancesValues);
+            }
+        }
+        cursor.close();
+        return distancesValues;
+    }
 }
