@@ -28,7 +28,9 @@ public class SetupChart {
         this.dbHelper = dbHelper;
     }
 
-//吊臂角度
+
+
+    //吊臂角度
     public void setupChart_angle(int angle, int workingConditionId) {
         if (angle > 90) {
             Toast.makeText(context, "角度应该小于90度", Toast.LENGTH_SHORT).show();
@@ -60,8 +62,24 @@ public class SetupChart {
         XYset(chart,  entries);
     }
 
+    public double setupChart_weight(int angle, double distances, int working) {
+        if (distances > 24.5 || distances <7) {
+            Toast.makeText(context, "长度在7和24.5之间", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
+        if (angle > 90) {
+            Toast.makeText(context, "角度应该小于90度", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
+        double working_weight = dbHelper.Anglelengthliftingweight(angle,distances,working);
+
+        return working_weight;
+    }
+
+
+
 //吊臂长度
-    public void setupChart_distances(int dist, int workingConditionId) {
+    public void setupChart_distances(double dist, int workingConditionId) {
         Log.d("111111111111111111", "setupChart_distances: "+ dist +"  "+ workingConditionId);
 
         if (dist > 24.5 || dist <7) {

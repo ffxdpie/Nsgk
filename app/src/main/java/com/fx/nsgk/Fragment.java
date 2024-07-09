@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 
@@ -24,18 +25,14 @@ public class Fragment extends androidx.fragment.app.Fragment {
 
 
     private String title;
-    private EditText editTextNumber,editTextNumber1;
-    private int dist;
+    private EditText editTextNumber2,editTextNumber3;
+    private double dist;
     private int workingConditionId;
-    private int var = -1;
+    private double var = -1;
     private int angle;
     private TextView edittext ,edittext1;
     private LineChart chart;
 
-
-    public Fragment() {
-        // Required empty public constructor
-    }
 
 
     public static Fragment newInstance(String param1 , int param2 , int param3, int param4) {
@@ -65,22 +62,24 @@ public class Fragment extends androidx.fragment.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dis, container, false);
-        editTextNumber = view.findViewById(R.id.editTextNumber2);
-        editTextNumber1 = view.findViewById(R.id.editTextNumber3);
+        editTextNumber2 = view.findViewById(R.id.editTextNumber2);
+        editTextNumber3 = view.findViewById(R.id.editTextNumber3);
         edittext = view.findViewById(R.id.textView6);
         edittext1 = view.findViewById(R.id.textView7);
         Button button = view.findViewById(R.id.button3);
         Button button1 = view.findViewById(R.id.button4);
         chart = view.findViewById(R.id.chart);
+
         setupChartIfNeeded();
+
 
         button.setOnClickListener(v -> {
             if (getContext() != null) {
-                String textvar = editTextNumber.getText().toString(); // 获取EditText中的文本
+                String textvar = editTextNumber2.getText().toString(); // 获取EditText中的文本
                 if (! textvar.isEmpty()) { // 检查文本是否为空
                     try {
-                        // 尝试将文本转换为整数
-                        var = Integer.parseInt(textvar);
+                        // 尝试将文本转换为double
+                        var = Math.round(Double.parseDouble(textvar)* 10) / 10.0;
                     } catch (NumberFormatException e) {
                         return; // 退出方法，不进行图表更新
                     }
@@ -90,13 +89,50 @@ public class Fragment extends androidx.fragment.app.Fragment {
         });
 
         button1.setOnClickListener(v -> {
-            String inputvalue = editTextNumber1.getText().toString();
+            button.performClick();
+            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+            SetupChart setupChart = new SetupChart(getContext(), chart, dbHelper);
+            String weight;
+            int ang = 0;
+            double d = 7.0;
+
             switch (title) {
                 case "角度和起重量":
+                    if (editTextNumber2 != null && editTextNumber3 != null) {
+                        double inputvalue3;
+                        double inputvalue2;
+                        try {
+                            inputvalue2 = Double.parseDouble(editTextNumber2.getText().toString());
+                            inputvalue3 = Double.parseDouble(editTextNumber3.getText().toString());
+                            // 更多的逻辑
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(getContext(), "请输入有效的数字", Toast.LENGTH_SHORT).show();
+                            return;  // 阻止进一步执行
+                        }
+                        ang = (int) Math.round(inputvalue3);
+                        d = inputvalue2;
+                    }
 
+                    weight = String.valueOf(setupChart.setupChart_weight(ang, d, workingConditionId));
+                    edittext1.setText(weight);
                     break;
                 case "吊臂长度和起重量":
-
+                    if (editTextNumber2 != null && editTextNumber3 != null) {
+                        double inputvalue2;
+                        double inputvalue3;
+                        try {
+                            inputvalue2 = Double.parseDouble(editTextNumber2.getText().toString());
+                            inputvalue3 = Double.parseDouble(editTextNumber3.getText().toString());
+                            // 更多的逻辑
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(getContext(), "请输入有效的数字", Toast.LENGTH_SHORT).show();
+                            return;  // 阻止进一步执行
+                        }
+                        d =  Math.round(inputvalue3* 10) / 10.0;
+                        ang = (int) inputvalue2;
+                    }
+                    weight = String.valueOf(setupChart.setupChart_weight(ang, d, workingConditionId));
+                    edittext1.setText(weight);
                     break;
                 default:
                     // 你可以在这里处理任何默认情况，或者什么也不做
@@ -125,7 +161,8 @@ public class Fragment extends androidx.fragment.app.Fragment {
                     }
 
                     edittext.setText("长度7-24.5");
-                    editTextNumber.setHint("长度");
+                    editTextNumber2.setHint("输入吊臂长度");
+                    editTextNumber3.setHint("输入角度");
                     setupChart.setupChart_distances(var, workingConditionId);
                     break;
                 case "吊臂长度和起重量":
@@ -134,9 +171,10 @@ public class Fragment extends androidx.fragment.app.Fragment {
                     }
 
                     edittext.setText("角度0-90");
-                    editTextNumber.setHint("角度");
+                    editTextNumber2.setHint("输入角度");
+                    editTextNumber3.setHint("输入吊臂长度");
 
-                    setupChart.setupChart_angle(var, workingConditionId);
+                    setupChart.setupChart_angle((int) var, workingConditionId);
                     break;
                 default:
                     // 你可以在这里处理任何默认情况，或者什么也不做

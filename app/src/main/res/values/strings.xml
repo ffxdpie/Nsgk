@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">测试202461</string>
+    <string name="vsion">版本 0.1 2024/7/9</string>
     <string name="button1">工况选择</string>
     <string name="button2">工况详情</string>
     <string name="button3">工况图显示</string>
@@ -21,7 +22,7 @@
     <string name="textview">工况详情</string>
     <string name="editTextNumber">输入工况</string>
     <string name="todo2">TODO</string>
-    <string name="workingbutton">刷新</string>
+    <string name="workingbutton">刷新图表</string>
     <string name="editTextnumber2">角度</string>
     <string name="textviewworkgram">角度</string>
     <!-- TODO: Remove or change this placeholder text -->

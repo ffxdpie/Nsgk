@@ -259,7 +259,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return angleValues;
     }
 
-    public ArrayList<Double> getDistancesWeight(int distances, int working) {
+    public ArrayList<Double> getDistancesWeight(double distances, int working) {
 
         SQLiteDatabase db = null;
         ArrayList<Double> distancesValues = new ArrayList<>();
@@ -287,5 +287,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return distancesValues;
+    }
+
+    @SuppressLint("Range")
+    public double Anglelengthliftingweight(int angle,double distances, int working ) {
+        SQLiteDatabase db = null;
+        double weight = 0;
+        try {
+            db = this.getReadableDatabase();
+            String angleColumn = "angle" + angle;
+            String query = "SELECT "+ angleColumn +" FROM NSgk_Max WHERE Working = ? AND distance =? ";
+            Cursor cursor = db.rawQuery(query, new String[]{ String.valueOf(working),String.valueOf(distances)});
+            if (cursor.moveToFirst()) {
+                 weight = cursor.getDouble(cursor.getColumnIndex(angleColumn));
+            }
+            cursor.close();
+        } catch (Exception e) {
+            Log.e(TAG, "数据查询错误: " + e.getMessage());
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "Anglelengthliftingweight: "+ weight);
+        return weight;
+
     }
 }
