@@ -24,14 +24,12 @@ public class Fragment extends androidx.fragment.app.Fragment {
 
 
     private String title;
-    private EditText editTextNumber;
-
+    private EditText editTextNumber,editTextNumber1;
     private int dist;
     private int workingConditionId;
     private int var = -1;
     private int angle;
-    private Button button;
-    private TextView edittext;
+    private TextView edittext ,edittext1;
     private LineChart chart;
 
 
@@ -68,8 +66,11 @@ public class Fragment extends androidx.fragment.app.Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dis, container, false);
         editTextNumber = view.findViewById(R.id.editTextNumber2);
+        editTextNumber1 = view.findViewById(R.id.editTextNumber3);
         edittext = view.findViewById(R.id.textView6);
-        button = view.findViewById(R.id.button3);
+        edittext1 = view.findViewById(R.id.textView7);
+        Button button = view.findViewById(R.id.button3);
+        Button button1 = view.findViewById(R.id.button4);
         chart = view.findViewById(R.id.chart);
         setupChartIfNeeded();
 
@@ -87,9 +88,27 @@ public class Fragment extends androidx.fragment.app.Fragment {
                 setupChartIfNeeded();
             }
         });
+
+        button1.setOnClickListener(v -> {
+            String inputvalue = editTextNumber1.getText().toString();
+            switch (title) {
+                case "角度和起重量":
+
+                    break;
+                case "吊臂长度和起重量":
+
+                    break;
+                default:
+                    // 你可以在这里处理任何默认情况，或者什么也不做
+                    break;
+            }
+
+
+        });
         Log.d("Fragment_dis", "Received args: title=" + title + ", angle=" + var + ", workingConditionId=" + workingConditionId);
         return view;
     }
+
 
 
 
