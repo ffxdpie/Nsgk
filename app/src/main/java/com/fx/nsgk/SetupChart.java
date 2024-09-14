@@ -30,6 +30,7 @@ public class SetupChart {
 
 
 
+
     //吊臂角度
     public void setupChart_angle(int angle, int workingConditionId) {
         if (angle > 90) {
@@ -151,7 +152,7 @@ public class SetupChart {
 
     //工况信息
     @SuppressLint("SetTextI18n")
-    static String workinfo(int workingConditionId, Workingconditiontype wkt){
+    public String workinfo(int workingConditionId, Workingconditiontype wkt){
         String rt = wkt.rotationDescription;
         String cw = wkt.counterweightDescription;
         String ot = wkt.outriggerDescription;

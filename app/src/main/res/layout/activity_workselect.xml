@@ -34,8 +34,8 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:entries="@array/options3"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
@@ -46,8 +46,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/Counterweighttype"
         android:textColor="#263238"
         android:textSize="20sp"
@@ -59,8 +60,8 @@
 
     <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="119dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:entries="@array/options4"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -70,8 +71,8 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:entries="@array/options2"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
@@ -90,20 +91,20 @@
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.045"
         tools:ignore="MissingConstraints,TextSizeCheck,TextSizeCheck" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:entries="@array/options1"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <Button
         android:id="@+id/button"
@@ -113,29 +114,30 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/Counterweightextendsdistance"
         android:textColor="#263238"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.767"
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/Outriggertype"
         android:textColor="#263238"
         android:textSize="20sp"
@@ -147,8 +149,9 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/Rotationtype"
         android:textColor="#263238"
         android:textSize="20sp"
@@ -163,7 +166,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        app:layout_constraintGuide_percent="0.50121653" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -192,6 +195,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="286dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="64dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="329dp"
+        android:layout_height="324dp"
+        android:text="@string/info"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:layout_constraintVertical_bias="0.85" />
 
     <!-- Spinner4 -->
 

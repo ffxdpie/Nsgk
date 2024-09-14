@@ -77,13 +77,13 @@ public class Workingconditiontype {
     public String getfourth(int code) {
         switch (code) {
             case 7:
-                return "配重伸出距离: 7米";
+                return "配重伸出距离:  7米";
             case 10:
-                return "配重伸出距离: 10米";
+                return "配重伸出距离:  10米";
             case 12:
-                return "配重伸出距离: 12米";
+                return "配重伸出距离:  12米";
             default:
-                return "配重伸出距离: 错误";
+                return "配重伸出距离:  错误";
         }
     }
 }

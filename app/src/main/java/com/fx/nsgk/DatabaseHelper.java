@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 import java.io.File;
@@ -151,38 +152,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Cwtype 配重类型
     // Rtype  回转类型
     @SuppressLint("Range")
-    public List<Integer> queryWork(int rcdistance, int otype, int cwtype, int rtype) {
+    public List<Integer> queryWork(int rcdistance, int oType, int cwType, int rType) {
         SQLiteDatabase db = null;
         List<Integer> gkValues = new ArrayList<>();
+        WorksElectTyp result = null;  // 返回 null 表示未找到数据
         try {
             db = this.getReadableDatabase();
+            // 构建 SQL 查询，考虑所有参数都可能为空的情况
             StringBuilder queryBuilder = new StringBuilder("SELECT gk FROM gk WHERE ");
-            List<String> whereArgs = new ArrayList<>();
+            List<String> conditions = new ArrayList<>();
+            List<String> args = new ArrayList<>();
+            result = new WorksElectTyp(rcdistance, oType, cwType, rType);
 
-            // 构建查询语句和参数列表
-            if (rcdistance != -1) {
-                queryBuilder.append("rcdistance = ? AND ");
-                whereArgs.add(String.valueOf(rcdistance));
+            if (rcdistance > 0) {
+                conditions.add("rcdistance = ?");
+                args.add(String.valueOf(result.rcdistancetype));
             }
-            if (otype != -1) {
-                queryBuilder.append("Otype = ? AND ");
-                whereArgs.add(String.valueOf(otype));
+            if (oType > 0) {
+                conditions.add("Otype = ?");
+                args.add(String.valueOf(result.otypetpye));
             }
-            if (cwtype != -1) {
-                queryBuilder.append("Cwtype = ? AND ");
-                whereArgs.add(String.valueOf(cwtype));
+            if (cwType > 0) {
+                conditions.add("Cwtype = ?");
+                args.add(String.valueOf(result.cwtypetype));
             }
-            if (rtype != -1) {
-                queryBuilder.append("Rtype = ? AND ");
-                whereArgs.add(String.valueOf(rtype));
-            }
-
-            // 删除末尾的 "AND"
-            if (queryBuilder.toString().endsWith("AND ")) {
-                queryBuilder.setLength(queryBuilder.length() - 5);
+            if (rType > 0) {
+                conditions.add("Rtype= ?");
+                args.add(String.valueOf(result.rtypetype));
             }
 
-            Cursor cursor = db.rawQuery(queryBuilder.toString(), whereArgs.toArray(new String[0]));
+            queryBuilder.append(TextUtils.join(" AND ", conditions));
+
+            Cursor cursor = db.rawQuery(queryBuilder.toString(), args.toArray(new String[0]));
             if (cursor.moveToFirst()) {
                 do {
                     int gkValue = cursor.getInt(cursor.getColumnIndex("gk"));
@@ -199,6 +200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return gkValues;
     }
+
 
     //获取工况的信息
     @SuppressLint("Range")
@@ -313,4 +315,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return weight;
 
     }
+
+
+    //查询各种车体的信息
+    @SuppressLint("Range")
+    public List<Vehicle> getAllVehicles() {
+        List<Vehicle> vehicleList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM vehicles",null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                vehicle.setName(cursor.getString(cursor.getColumnIndex("name")));
+                vehicle.setWeight(cursor.getString(cursor.getColumnIndex("weight")));
+                vehicle.setLength(cursor.getString(cursor.getColumnIndex("length")));
+                vehicle.setHeight(cursor.getString(cursor.getColumnIndex("height")));
+                vehicleList.add(vehicle);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return vehicleList;
+    }
+
+
+
 }

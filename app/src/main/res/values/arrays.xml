@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="options1">
-        <item>-1</item>
-        <item>7</item>
-        <item>10</item>
-        <item>12</item>
+        <item>不做选择</item>
+        <item>配重伸出 7米</item>
+        <item>配重伸出 10米</item>
+        <item>配重伸出 12米</item>
     </string-array>
     <string-array name="options2">
-        <item>-1</item>
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
+        <item>不做选择</item>
+        <item>无支腿</item>
+        <item>单个支腿伸出 3.90米</item>
+        <item>单个支腿伸出 3.0米-3.9米</item>
+        <item>单个支腿伸出 2.0–3.0米</item>
+        <item>单侧支腿伸出 3.90米</item>
+        <item>单侧支腿伸出 3.0米-3.9米</item>
+        <item>单侧支腿伸出 2.0–3.0米</item>
+        <item>全部支腿伸出 6米</item>
+        <item>全部支腿伸出 6.0 – 7.8米</item>
+        <item>全部支腿伸出 4.0 – 6.0米</item>
     </string-array>
     <string-array name="options3">
-        <item>-1</item>
-        <item>1</item>
-        <item>2</item>
+        <item>不做选择</item>
+        <item>30°摆动</item>
+        <item>360°回转</item>
     </string-array>
     <string-array name="options4">
-        <item>-1</item>
-        <item>2</item>
-        <item>0</item>
+        <item>不做选择</item>
+        <item>1块配重</item>
+        <item>2快配重</item>
     </string-array>
     <string-array name="options5">
-        <item> 工况 </item>
     </string-array>
 </resources>

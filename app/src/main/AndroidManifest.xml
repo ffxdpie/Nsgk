@@ -13,26 +13,30 @@
         android:theme="@style/Theme.NSgk"
         tools:targetApi="31">
         <activity
+            android:name=".VehicleDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LocomotiveInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity_workingconditiondiagram"
-
             android:exported="false"
-            tools:ignore="DiscouragedApi" />
-            <!-- android:theme="@style/Theme.App.NoStatusBar" 隐藏该activate的状态栏 -->
-            <!--android:screenOrientation="landscape" 设置该activaty始终横向-->
+            tools:ignore="DiscouragedApi" /> <!-- android:theme="@style/Theme.App.NoStatusBar" 隐藏该activate的状态栏 -->
+        <!-- android:screenOrientation="landscape" 设置该activaty始终横向 -->
         <activity
             android:name=".WorksElect"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name=".weightActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
+            android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name=".activity_main"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity"> <!-- 将 MainActivity 设置为默认启动的 Activity，并设置为导出 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

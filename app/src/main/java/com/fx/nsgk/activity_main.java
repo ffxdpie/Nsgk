@@ -26,6 +26,7 @@ public class activity_main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageButton imageButton1 = findViewById(R.id.imageButton1);
         ImageButton imageButton2 = findViewById(R.id.imageButton2);
+        ImageButton imageButton3 = findViewById(R.id.imageButton3);
         ImageButton imageButton = findViewById(R.id.imageButton);
         editTextNumber = findViewById(R.id.editTextNumber);
         textView = findViewById(R.id.textView);
@@ -51,6 +52,13 @@ public class activity_main extends AppCompatActivity {
         imageButton1.setOnClickListener(v -> {
             // 创建一个 Intent，用于启动 weightActivity
             Intent intent = new Intent(activity_main.this, WorksElect.class);
+            startActivity(intent); // 启动新的 Activity
+        });
+
+
+        imageButton3.setOnClickListener(v -> {
+            // 创建一个 Intent，用于启动 weightActivity
+            Intent intent = new Intent(activity_main.this, LocomotiveInformationActivity.class);
             startActivity(intent); // 启动新的 Activity
         });
 

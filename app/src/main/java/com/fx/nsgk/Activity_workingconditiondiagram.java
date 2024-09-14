@@ -50,9 +50,10 @@ public class Activity_workingconditiondiagram extends AppCompatActivity {
 
         Log.d(TAG, "workingConditionId: "+ workingConditionId);
         //设置文本内容
-        TextView workinginfo = findViewById(id.workinginfo);
+        TextView workinginfo = findViewById(R.id.workinginfo);
         Workingconditiontype wkt = dbHelper.WorkingType(String.valueOf(workingConditionId));
-        workinginfo.setText(SetupChart.workinfo(workingConditionId,wkt));
+        SetupChart setupChart = new SetupChart(this ,null, dbHelper);
+        workinginfo.setText(setupChart.workinfo(workingConditionId,wkt));
         // 获取 Toolbar 并设置标题
         Toolbar toolbar = findViewById(id.toolbar);
         setSupportActionBar(toolbar);
