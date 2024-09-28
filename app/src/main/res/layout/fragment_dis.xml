@@ -16,8 +16,8 @@
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/chart"
-            android:layout_width="408dp"
-            android:layout_height="287dp"
+            android:layout_width="385dp"
+            android:layout_height="280dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="125dp"
-                android:layout_height="46dp"
+                android:layout_height="48dp"
                 android:gravity="center"
                 android:text="@string/textviewworkgram"
                 android:textColor="@color/black"
@@ -49,11 +49,11 @@
             <EditText
                 android:id="@+id/editTextNumber2"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/editTextnumber2"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:minHeight="48dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/black"
@@ -66,8 +66,8 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/workingbutton"
                 android:textColor="#000000"
@@ -91,7 +91,7 @@
                 android:layout_height="48dp"
                 android:gravity="center"
                 android:hint="@string/Liftingweightcalculation"
-                android:textColor="@color/design_default_color_error"
+                android:textColor="@color/black"
                 android:textColorHint="@color/design_default_color_error"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/editTextNumber3"
@@ -104,7 +104,7 @@
             <EditText
                 android:id="@+id/editTextNumber3"
                 android:layout_width="120dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/input"
@@ -121,8 +121,8 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/OK"
                 android:textColor="#000000"

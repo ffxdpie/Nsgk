@@ -323,7 +323,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<Vehicle> vehicleList = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM vehicles",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM vehicles ",null);
 
         if (cursor.moveToFirst()) {
             do {
@@ -339,6 +339,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return vehicleList;
+    }
+
+    //查询一个车体的信息
+    @SuppressLint("Range")
+    public  Vehicle getVehicle(String name) {
+        Vehicle vehicle = null;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor cursor = db.rawQuery("SELECT * FROM vehicles WHERE name = ?",null);
+
+        String query = "SELECT * FROM vehicles WHERE name = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{ String.valueOf(name)});
+
+        // 如果找到车辆，读取数据
+        if (cursor.moveToFirst()) {
+            vehicle = new Vehicle();
+            vehicle.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            vehicle.setName(cursor.getString(cursor.getColumnIndex("name")));
+            vehicle.setWeight(cursor.getString(cursor.getColumnIndex("weight")));
+            vehicle.setLength(cursor.getString(cursor.getColumnIndex("length")));
+            vehicle.setHeight(cursor.getString(cursor.getColumnIndex("height")));
+        }
+        cursor.close();
+        db.close();
+
+        return vehicle;
     }
 
 

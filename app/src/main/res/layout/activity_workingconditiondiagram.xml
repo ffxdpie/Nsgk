@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_secondary70"
+    android:background="@color/white"
     tools:context=".Activity_workingconditiondiagram">
 
     <!-- Toolbar -->
@@ -37,8 +37,8 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,12 +50,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="548dp" />
+        app:layout_constraintGuide_begin="526dp" />
 
     <TextView
         android:id="@+id/workinginfo"
-        android:layout_width="0dp"
-        android:layout_height="131dp"
+        android:layout_width="390dp"
+        android:layout_height="164dp"
         android:hint="@string/textview"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -63,10 +63,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:layout_constraintVertical_bias="0.656"
+        app:layout_constraintVertical_bias="0.48"
         tools:ignore="TextContrastCheck" />
 
     <View
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="704dp" />
+        app:layout_constraintGuide_begin="715dp" />
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -121,9 +121,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="407dp"
-        android:layout_height="57dp"
-        android:background="@color/material_dynamic_secondary70"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         android:contentDescription="@android:string/unknownName"
         app:layout_constraintBottom_toTopOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -131,8 +131,9 @@
         app:tabIndicatorFullWidth="false"
         app:tabMode="fixed"
         app:tabTextColor="#222222"
-        tools:layout_editor_absoluteX="2dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp" />
+
 
 
 

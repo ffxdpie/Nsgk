@@ -101,9 +101,15 @@ public class Activity_workingconditiondiagram extends AppCompatActivity {
 
             }
 
+            int clicknumber = 0;
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                Toast.makeText(Activity_workingconditiondiagram.this, "再点就坏了", Toast.LENGTH_SHORT).show();
+                clicknumber ++;
+                if (clicknumber == 10){
+                    Toast.makeText(Activity_workingconditiondiagram.this, "石书源", Toast.LENGTH_SHORT).show();
+                    clicknumber = 0;
+                };
+
 
             }
         });

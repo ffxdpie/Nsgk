@@ -2,6 +2,7 @@ package com.fx.nsgk;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.List;
 public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder> {
     private Context context;
     private List<Vehicle> vehicleList;
+    String TAG= "veh";
 
     public VehicleAdapter(Context context, List<Vehicle> vehicleList) {
         this.context = context;
@@ -37,15 +39,15 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
         holder.tvWeight.setText(vehicle.getWeight());
         holder.tvLength.setText(vehicle.getLength());
         holder.tvHeight.setText(vehicle.getHeight());
-
-        Button btnDetail = holder.itemView.findViewById(R.id.button5);
         // 加载图片 (如果你使用Glide或Picasso)
         // Glide.with(context).load(vehicle.getImage()).into(holder.ivVehicleImage);
 
+        Button btnDetail = holder.itemView.findViewById(R.id.button5);
         btnDetail.setOnClickListener(v -> {
             Intent intent = new Intent(context, VehicleDetailActivity.class);
-            //intent.putExtra("vehicleId", vehicle.getId());  // Assuming each vehicle has an ID.
+            intent.putExtra("vehicleName", vehicle.getName());  // 传递name
             context.startActivity(intent);
+            Log.d(TAG, "veh =" + vehicle.getName() );
 
         });
     }
