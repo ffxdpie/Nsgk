@@ -1,5 +1,6 @@
 package com.fx.nsgk;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -32,13 +33,14 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
         return new VehicleViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull VehicleViewHolder holder, int position) {
         Vehicle vehicle = vehicleList.get(position);
         holder.tvName.setText(vehicle.getName());
-        holder.tvWeight.setText(vehicle.getWeight());
-        holder.tvLength.setText(vehicle.getLength());
-        holder.tvHeight.setText(vehicle.getHeight());
+        holder.tvWeight.setText(vehicle.getOneWeight()+" 吨");
+        holder.tvLength.setText(vehicle.getLength()+" mm");
+        holder.tvHeight.setText(vehicle.getHeight()+" mm");
         // 加载图片 (如果你使用Glide或Picasso)
         // Glide.with(context).load(vehicle.getImage()).into(holder.ivVehicleImage);
 

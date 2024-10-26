@@ -41,4 +41,8 @@
     <string name="cheliangxinxisousuo">搜索</string>
     <string name="cheliangxinxi">检索</string>
     <string name="cheliangxiabngxiinfo">车辆详细信息将显示在这里</string>
+    <string name="labelName">车型</string>
+    <string name="labelWeight">重量</string>
+    <string name="labelLength">长度</string>
+    <string name="labelHeight">高度</string>
 </resources>

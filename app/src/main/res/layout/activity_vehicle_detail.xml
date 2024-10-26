@@ -1,45 +1,479 @@
-<!-- activity_vehicle_detail.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/design_default_color_secondary_variant"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="372dp"
-        android:layout_height="71dp"
-        android:text="TextView"
-        tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/textView13"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:text="TextView"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:text="TextView"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:text="TextView"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/tvVehicleDetails"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cheliangxiabngxiinfo"
-        android:textSize="18sp" />
+        android:padding="16dp">
 
-</LinearLayout>
+
+
+        <!-- 车型名称 -->
+        <TextView
+            android:id="@+id/labelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="车型名称："
+            android:textSize="34sp" />
+
+        <!-- 分隔线 -->
+
+        <TextView
+            android:id="@+id/dataName"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="14dp"
+            android:text=""
+            android:textSize="34sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelName"
+            android:background="#E0E0E0" />
+
+        <!-- 重量 -->
+        <TextView
+            android:id="@+id/labelOneWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="重量：" />
+        <TextView
+            android:id="@+id/dataOneWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelOneWeight"
+            android:layout_alignTop="@id/labelOneWeight"
+            android:layout_marginStart="5dp"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:id="@+id/lineOneWeight"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelOneWeight"
+            android:background="#E0E0E0" />
+        <!-- 单台转向架重量 -->
+        <TextView
+            android:id="@+id/labelzxjweight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelOneWeight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="单台转向架重量：" />
+        <TextView
+            android:id="@+id/datazxjweight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelzxjweight"
+            android:layout_alignTop="@id/labelzxjweight"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelzxjweight"
+            android:background="#E0E0E0" />
+
+        <!-- 牵引变压器重量 -->
+        <TextView
+            android:id="@+id/labelTransformerWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelzxjweight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="牵引变压器重量：" />
+        <TextView
+            android:id="@+id/dataTransformerWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelTransformerWeight"
+            android:layout_alignTop="@id/labelTransformerWeight"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelTransformerWeight"
+            android:background="#E0E0E0" />
+
+        <!-- 单节车长 -->
+        <TextView
+            android:id="@+id/labelCarLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelTransformerWeight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="单节车长：" />
+        <TextView
+            android:id="@+id/dataCarLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelCarLength"
+            android:layout_alignTop="@id/labelCarLength"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelCarLength"
+            android:background="#E0E0E0" />
+
+
+        <!-- 车体长度 -->
+        <TextView
+            android:id="@+id/labelLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelCarLength"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体长度：" />
+        <TextView
+            android:id="@+id/dataLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelLength"
+            android:layout_alignTop="@id/labelLength"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelLength"
+            android:background="#E0E0E0" />
+
+        <!-- 机车/车辆宽度 -->
+        <TextView
+            android:id="@+id/labelvehiclewidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelLength"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="机车/车辆宽度：" />
+        <TextView
+            android:id="@+id/datavehiclewidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelvehiclewidth"
+            android:layout_alignTop="@id/labelvehiclewidth"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelvehiclewidth"
+            android:background="#E0E0E0" />
+
+        <!-- 车体宽度 -->
+        <TextView
+            android:id="@+id/labelwidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelvehiclewidth"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体宽度：" />
+        <TextView
+            android:id="@+id/datawidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelwidth"
+            android:layout_alignTop="@id/labelwidth"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelwidth"
+            android:background="#E0E0E0" />
+
+        <!-- 车高 -->
+        <TextView
+            android:id="@+id/labelheight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelwidth"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体高度：" />
+        <TextView
+            android:id="@+id/dataheight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelheight"
+            android:layout_alignTop="@id/labelheight"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelheight"
+            android:background="#E0E0E0" />
+
+        <!-- 车体高度1 -->
+        <TextView
+            android:id="@+id/labelheight1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelheight"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体高度1：" />
+        <TextView
+            android:id="@+id/dataheight1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelheight1"
+            android:layout_alignTop="@id/labelheight1"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelheight1"
+            android:background="#E0E0E0" />
+
+        <!-- 车体重量1 -->
+        <TextView
+            android:id="@+id/labelweight1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelheight1"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体重量1：" />
+        <TextView
+            android:id="@+id/dataweight1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelweight1"
+            android:layout_alignTop="@id/labelweight1"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelweight1"
+            android:background="#E0E0E0" />
+
+        <!-- 车体高度2 -->
+        <TextView
+            android:id="@+id/labelheight2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelweight1"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体高度2：" />
+        <TextView
+            android:id="@+id/dataheight2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelheight2"
+            android:layout_alignTop="@id/labelheight2"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelheight2"
+            android:background="#E0E0E0" />
+
+        <!-- 车体重量2 -->
+        <TextView
+            android:id="@+id/labelweight2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelheight2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体重量2：" />
+        <TextView
+            android:id="@+id/dataweight2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelweight2"
+            android:layout_alignTop="@id/labelweight2"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelweight2"
+            android:background="#E0E0E0" />
+
+        <!-- 车体高度3 -->
+        <TextView
+            android:id="@+id/labelheight3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelweight2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体高度3：" />
+        <TextView
+            android:id="@+id/dataheight3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelheight3"
+            android:layout_alignTop="@id/labelheight3"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelheight3"
+            android:background="#E0E0E0" />
+
+        <!-- 车体重量3 -->
+        <TextView
+            android:id="@+id/labelweight3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelheight3"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体重量3：" />
+        <TextView
+            android:id="@+id/dataweight3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelweight3"
+            android:layout_alignTop="@id/labelweight3"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelweight3"
+            android:background="#E0E0E0" />
+
+        <!-- 车体高度4 -->
+        <TextView
+            android:id="@+id/labelheight4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelweight3"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体高度4：" />
+        <TextView
+            android:id="@+id/dataheight4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelheight4"
+            android:layout_alignTop="@id/labelheight4"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelheight4"
+            android:background="#E0E0E0" />
+
+        <!-- 车体重量4 -->
+        <TextView
+            android:id="@+id/labelweight4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelheight4"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="车体重量4：" />
+        <TextView
+            android:id="@+id/dataweight4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelweight4"
+            android:layout_alignTop="@id/labelweight4"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelweight4"
+            android:background="#E0E0E0" />
+
+
+        <!-- image -->
+        <TextView
+            android:id="@+id/labelimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelweight4"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="图像：" />
+        <TextView
+            android:id="@+id/dataimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelimage"
+            android:layout_alignTop="@id/labelimage"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelimage"
+            android:background="#E0E0E0" />
+
+        <!-- model -->
+        <TextView
+            android:id="@+id/labelmodel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelimage"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:text="机车类型：" />
+        <TextView
+            android:id="@+id/datamodel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/labelmodel"
+            android:layout_alignTop="@id/labelmodel"
+            android:text="" />
+
+        <!-- 分隔线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/labelmodel"
+            android:background="#E0E0E0" />
+
+        <!-- 更多标签继续添加 -->
+
+    </RelativeLayout>
+</ScrollView>

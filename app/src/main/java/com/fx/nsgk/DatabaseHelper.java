@@ -330,7 +330,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Vehicle vehicle = new Vehicle();
                 vehicle.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 vehicle.setName(cursor.getString(cursor.getColumnIndex("name")));
-                vehicle.setWeight(cursor.getString(cursor.getColumnIndex("weight")));
+                vehicle.setOneWeight(cursor.getString(cursor.getColumnIndex("oneweight")));
                 vehicle.setLength(cursor.getString(cursor.getColumnIndex("length")));
                 vehicle.setHeight(cursor.getString(cursor.getColumnIndex("height")));
                 vehicleList.add(vehicle);
@@ -357,9 +357,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             vehicle = new Vehicle();
             vehicle.setId(cursor.getInt(cursor.getColumnIndex("id")));
             vehicle.setName(cursor.getString(cursor.getColumnIndex("name")));
-            vehicle.setWeight(cursor.getString(cursor.getColumnIndex("weight")));
+            vehicle.setOneWeight(cursor.getString(cursor.getColumnIndex("oneweight")));
+            vehicle.setZxjWeight(cursor.getString(cursor.getColumnIndex("zxjweight")));
+            vehicle.setQybyqWeight(cursor.getString(cursor.getColumnIndex("qybyqweight")));
+            vehicle.setCarLength(cursor.getString(cursor.getColumnIndex("carlength")));
             vehicle.setLength(cursor.getString(cursor.getColumnIndex("length")));
+            vehicle.setVehicLewidth(cursor.getString(cursor.getColumnIndex("vehiclewidth")));
+            vehicle.setWidth(cursor.getString(cursor.getColumnIndex("width")));
             vehicle.setHeight(cursor.getString(cursor.getColumnIndex("height")));
+            vehicle.setHeight1(cursor.getString(cursor.getColumnIndex("height1")));
+            vehicle.setHeight2(cursor.getString(cursor.getColumnIndex("height2")));
+            vehicle.setHeight3(cursor.getString(cursor.getColumnIndex("height3")));
+            vehicle.setHeight4(cursor.getString(cursor.getColumnIndex("height4")));
+            vehicle.setWeight1(cursor.getString(cursor.getColumnIndex("weight1")));
+            vehicle.setWeight2(cursor.getString(cursor.getColumnIndex("weight2")));
+            vehicle.setWeight3(cursor.getString(cursor.getColumnIndex("weight3")));
+            vehicle.setWeight4(cursor.getString(cursor.getColumnIndex("weight4")));
+            vehicle.setImage(cursor.getString(cursor.getColumnIndex("image")));
+            vehicle.setModel(cursor.getString(cursor.getColumnIndex("model")));
         }
         cursor.close();
         db.close();

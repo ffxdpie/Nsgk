@@ -16,14 +16,36 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/labelName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
         android:layout_marginStart="3dp"
         android:layout_marginTop="10dp"
+        android:text="@string/labelName" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
         android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/labelWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/labelWeight" />
+
+
 
     <TextView
         android:id="@+id/tvWeight"
@@ -31,9 +53,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvName"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="10dp"
         android:text="@string/weight" />
+
+    <TextView
+        android:id="@+id/labelLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWeight"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/labelLength" />
 
     <TextView
         android:id="@+id/tvLength"
@@ -41,9 +73,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvWeight"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="10dp"
         android:text="@string/length" />
+
+    <TextView
+        android:id="@+id/labelHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLength"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/labelHeight" />
 
     <TextView
         android:id="@+id/tvHeight"
@@ -51,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvLength"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="10dp"
         android:text="@string/height" />
 
