@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">工况计算测试</string>
-    <string name="vsion">版本 0.1 2024/7/9</string>
+    <string name="vsion">版本 0.2 2024/11/26</string>
     <string name="button1">工况选择</string>
     <string name="button2">工况详情</string>
     <string name="button3">工况图显示</string>
@@ -45,4 +45,5 @@
     <string name="labelWeight">重量</string>
     <string name="labelLength">长度</string>
     <string name="labelHeight">高度</string>
+   
 </resources>

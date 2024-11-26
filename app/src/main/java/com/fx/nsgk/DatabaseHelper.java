@@ -341,7 +341,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return vehicleList;
     }
 
-    //查询一个车体的信息
+
+    //查询单个车体的信息
+    @SuppressLint("Range")
+    public List<Vehicle> getOneVehicles(String name) {
+        List<Vehicle> vehicleList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM vehicles WHERE LOWER(name) = LOWER(?)";
+        Cursor cursor = db.rawQuery(query, new String[]{ String.valueOf(name)});
+
+        if (cursor.moveToFirst()) {
+            do {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                vehicle.setName(cursor.getString(cursor.getColumnIndex("name")));
+                vehicle.setOneWeight(cursor.getString(cursor.getColumnIndex("oneweight")));
+                vehicle.setLength(cursor.getString(cursor.getColumnIndex("length")));
+                vehicle.setHeight(cursor.getString(cursor.getColumnIndex("height")));
+                vehicleList.add(vehicle);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return vehicleList;
+    }
+
+    //查询一个车体的详细信息
     @SuppressLint("Range")
     public  Vehicle getVehicle(String name) {
         Vehicle vehicle = null;

@@ -10,7 +10,7 @@
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
         android:inputType="text"
-        android:text="@string/cheliangxinxi"
+        android:hint="@string/cheliangxinxi"
         android:textColor="#000000"
         tools:ignore="LabelFor,VisualLintTextFieldSize"
         android:autofillHints="" />

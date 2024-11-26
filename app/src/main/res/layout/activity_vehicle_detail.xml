@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-
+    
 
         <!-- 车型名称 -->
         <TextView
