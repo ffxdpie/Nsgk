@@ -33,16 +33,16 @@ public class Activity_Canvas extends AppCompatActivity {
         });
 
         // 创建一个 Handler，用于在主线程中定时更新图像
-        Handler handler = new Handler();
+//        Handler handler = new Handler();
 
         // 设置每隔五秒更新一次图像
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                updateImage();  // 更新图像
-                handler.postDelayed(this, 50);  // 继续每五秒调用一次
-            }
-        }, 50);  // 首次延迟五秒后开始
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                updateImage();  // 更新图像
+//                handler.postDelayed(this, 50);  // 继续每五秒调用一次
+//            }
+//        }, 50);  // 首次延迟五秒后开始
 
     }
 

@@ -27,7 +27,7 @@ import android.widget.Toast;
 public class Activity_workingconditiondiagram extends AppCompatActivity {
     String TAG = "mytag_aw";
     private ViewPager2 ViewPager2;
-    private final String[] titles = {"吊臂长度和起重量", "角度和起重量"};
+    private final String[] titles = {"吊臂长度和起重量", "角度和起重量", "测试"};
     int workingConditionId;
 
 

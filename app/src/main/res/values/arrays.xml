@@ -29,6 +29,12 @@
         <item>1块配重</item>
         <item>2快配重</item>
     </string-array>
-    <string-array name="options5">
+    <string-array name="options5"> </string-array>
+
+    <string-array name="spinnerRole">
+        <item>普通职工</item>
+        <item>工具员</item>
+        <item>管理员</item>
     </string-array>
+
 </resources>
