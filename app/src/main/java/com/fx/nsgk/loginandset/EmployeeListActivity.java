@@ -1,4 +1,4 @@
-package com.fx.nsgk;
+package com.fx.nsgk.loginandset;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fx.nsgk.R;
 import com.fx.nsgk.Response.ApiService;
 import com.fx.nsgk.Response.RetrofitClient;
 import com.fx.nsgk.Response.UserResponse;

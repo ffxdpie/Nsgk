@@ -1,9 +1,8 @@
-package com.fx.nsgk;
+package com.fx.nsgk.loginandset;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Button;
@@ -11,12 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fx.nsgk.R;
 import com.fx.nsgk.Response.ApiService;
 import com.fx.nsgk.Response.RetrofitClient;
 import com.fx.nsgk.Response.UserRequest;
 import com.fx.nsgk.Response.UserResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

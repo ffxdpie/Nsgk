@@ -9,6 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.fx.nsgk.nsgk.WorkingData;
+import com.fx.nsgk.nsgk.Workingconditiontype;
+import com.fx.nsgk.nsgk.WorksElectTyp;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

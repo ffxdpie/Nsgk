@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fx.nsgk">
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 读取外部存储权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 写入外部存储权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+<!--    &lt;!&ndash; 读取外部存储权限 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    &lt;!&ndash; 写入外部存储权限 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
@@ -19,19 +21,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".loginandset.activity_tool_management"
+            android:exported="false" />
+        <activity
+            android:name=".loginandset.activity_tools_list"
+            android:exported="false" />
+        <activity
             android:name=".item_user"
             android:exported="false" />
         <activity
-            android:name=".EmployeeListActivity"
+            android:name=".loginandset.EmployeeListActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageActivity"
+            android:name=".loginandset.ManageActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeManagementActivity"
+            android:name=".loginandset.EmployeeManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_main"
+            android:name=".loginandset.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".Activity_Canvas"
@@ -43,22 +51,22 @@
             android:name=".LocomotiveInformationActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity_workingconditiondiagram"
+            android:name=".nsgk.Activity_workingconditiondiagram"
             android:exported="false"
             tools:ignore="DiscouragedApi" /> <!-- android:theme="@style/Theme.App.NoStatusBar" 隐藏该activate的状态栏 -->
         <!-- android:screenOrientation="landscape" 设置该activaty始终横向 -->
         <activity
-            android:name=".WorksElect"
+            android:name=".nsgk.WorksElect"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
-            android:name=".weightActivity"
+            android:name=".nsgk.weightActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".nsgk.activity_main"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity"> <!-- 将 MainActivity 设置为默认启动的 Activity，并设置为导出 -->

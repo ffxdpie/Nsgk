@@ -1,4 +1,4 @@
-package com.fx.nsgk;
+package com.fx.nsgk.loginandset;
 
 import android.content.Context;
 import android.view.LayoutInflater;

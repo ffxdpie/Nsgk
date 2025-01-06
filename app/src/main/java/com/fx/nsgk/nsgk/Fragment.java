@@ -1,4 +1,4 @@
-package com.fx.nsgk;
+package com.fx.nsgk.nsgk;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fx.nsgk.DatabaseHelper;
+import com.fx.nsgk.R;
 import com.github.mikephil.charting.charts.LineChart;
 
 

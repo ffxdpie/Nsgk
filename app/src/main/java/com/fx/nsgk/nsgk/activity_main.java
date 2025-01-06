@@ -1,17 +1,23 @@
-package com.fx.nsgk;
+package com.fx.nsgk.nsgk;
 
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.fx.nsgk.Activity_Canvas;
+import com.fx.nsgk.DatabaseHelper;
+import com.fx.nsgk.LocomotiveInformationActivity;
+import com.fx.nsgk.R;
+import com.fx.nsgk.loginandset.LoginActivity;
 
 public class activity_main extends AppCompatActivity {
     String TAG = "my-tag_main";
@@ -29,6 +35,7 @@ public class activity_main extends AppCompatActivity {
         ImageButton imageButton3 = findViewById(R.id.imageButton3);
         ImageButton imageButton = findViewById(R.id.imageButton);
         ImageButton imageButton5 = findViewById(R.id.imageButton5);
+        Button button_login = findViewById(R.id.btnLogin);
         editTextNumber = findViewById(R.id.editTextNumber);
         textView = findViewById(R.id.textView);
 
@@ -55,6 +62,7 @@ public class activity_main extends AppCompatActivity {
             Intent intent = new Intent(activity_main.this, WorksElect.class);
             startActivity(intent); // 启动新的 Activity
         });
+
 
 
         imageButton3.setOnClickListener(v -> {
@@ -87,6 +95,12 @@ public class activity_main extends AppCompatActivity {
             }
         }
         );
+        button_login.setOnClickListener(v -> {
+            // 创建一个 Intent，用于启动 weightActivity
+            Intent intent = new Intent(activity_main.this, LoginActivity.class);
+            startActivity(intent); // 启动新的 Activity
+
+        });
 
     }
 

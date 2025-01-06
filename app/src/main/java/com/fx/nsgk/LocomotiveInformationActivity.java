@@ -40,7 +40,6 @@ public class LocomotiveInformationActivity extends AppCompatActivity {
         //设置搜索按钮的作用
         Button button = findViewById(R.id.button6);
         button.setOnClickListener(v -> {
-//            Toast.makeText(LocomotiveInformationActivity.this, "暂且放置", Toast.LENGTH_SHORT).show();
             TextView textView = findViewById(R.id.editTextText3);
             String name = textView.getText().toString();
             // 判断 name 是否为空

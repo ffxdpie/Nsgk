@@ -63,4 +63,34 @@ public interface ApiService {
     Call<UserResponse> Userinfo(
             @Header("Authorization") String authHeader
     );
+
+    //添加工具
+    @POST("tools")
+    Call<ToolResponse> createTool(
+            @Header("Authorization") String authorization,  // 传递 Bearer token
+            @Body ToolRequest toolRequest  // 传入请求体
+    );
+
+    //获取所有工具
+    @GET("tools")  // 获取用户列表的接口
+    Call<List<ToolResponse>> getTools(
+            @Query("skip") int skip,  // 分页参数 skip
+            @Query("limit") int limit,  // 分页参数 limit
+            @Header("Authorization") String authorization  // 传递 Bearer token
+    );
+
+    //更新工具
+    @PUT("tools/{tool_id}")
+    Call<ToolResponse> PutTool(
+            @Path("name") String toolName,
+            @Header("Authorization") String authHeader
+    );
+
+    //删除工具
+    @DELETE
+    Call<ToolResponse> Delete(
+            @Path("name") String toolName,
+            @Header("Authorization") String authHeader
+    );
+
 }

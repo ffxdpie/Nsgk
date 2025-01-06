@@ -1,4 +1,4 @@
-package com.fx.nsgk;
+package com.fx.nsgk.nsgk;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.fx.nsgk.DatabaseHelper;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;

@@ -1,4 +1,4 @@
-package com.fx.nsgk;
+package com.fx.nsgk.nsgk;
 
 public class Workingconditiontype {
     public int rcdistance;
