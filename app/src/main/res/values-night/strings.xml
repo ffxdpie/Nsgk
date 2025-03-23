@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">测试202461</string>
-    <string name="button1">工况选择</string>
-    <string name="button2">工况详情</string>
-    <string name="button3">工况图显示</string>
-    <string name="button4">待添加</string>
-    <string name="ns1600">NS1600 电子计算软件</string>
-    <string name="gjjy">格尔木机务段救援车间</string>
-    <string name="distance">输入距离</string>
-    <string name="angle">输入角度</string>
-    <string name="Liftingcapacity">起重量</string>
-    <string name="OK">确认</string>
-    <string name="WorkingConditionDetails">工况详情</string>
-    <string name="Counterweightextendsdistance">配重伸出距离</string>
-    <string name="Outriggertype">支腿类型</string>
-    <string name="Counterweighttype">配重类型</string>
-    <string name="Rotationtype">回转类型</string>
-    <string name="button">确认</string>
-    <string name="todo">TODO</string>
 </resources>

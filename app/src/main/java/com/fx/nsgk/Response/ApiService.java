@@ -40,27 +40,28 @@ public interface ApiService {
     );
 
     // 获取用户信息
-    @GET("users/{name}")
+    @GET("users/{user_name}")
     Call<UserResponse> getUser(
-            @Path("name") String userName,  // 修改为通过 name 获取
+            @Path("user_name") String userName,  // 修改为通过 name 获取
             @Header("Authorization") String authHeader
     );
     // 更新用户信息
     @PUT("users/{user_name}")
-    Call<UserResponse> PutUser(
-            @Path("name") String userName,
+    Call<UserResponse> putUser(
+            @Path("user_name") String userName,
+            @Body UserRequest UserRequest,
             @Header("Authorization") String authHeader
     );
     //删除用户
     @DELETE("users/{user_name}")
     Call<UserResponse> deleteuser(
-            @Path("name") String userName,
+            @Path("user_name") String userName,
             @Header("Authorization") String authHeader
     );
 
     // 使用token获取用户信息
     @GET("users/token/me")
-    Call<UserResponse> Userinfo(
+    Call<UserResponse> userinfo(
             @Header("Authorization") String authHeader
     );
 
@@ -80,16 +81,17 @@ public interface ApiService {
     );
 
     //更新工具
-    @PUT("tools/{tool_id}")
-    Call<ToolResponse> PutTool(
-            @Path("name") String toolName,
+    @PUT("tools/{tool_name}")
+    Call<ToolResponse> putTool(
+            @Path("tool_name") String toolName,
+            @Body ToolRequest toolRequest,
             @Header("Authorization") String authHeader
     );
 
     //删除工具
-    @DELETE
-    Call<ToolResponse> Delete(
-            @Path("name") String toolName,
+    @DELETE("tools/{tool_name}")
+    Call<ToolResponse> deleteTool(
+            @Path("tool_name") String toolName,
             @Header("Authorization") String authHeader
     );
 

@@ -4,10 +4,6 @@
     package="com.fx.nsgk">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    &lt;!&ndash; 读取外部存储权限 &ndash;&gt;-->
-<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
-<!--    &lt;!&ndash; 写入外部存储权限 &ndash;&gt;-->
-<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
@@ -21,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".loginandset.activity_employee_edit"
+            android:exported="false" />
+        <activity
+            android:name=".loginandset.activity_tool_edit"
+            android:exported="false" />
+        <activity
             android:name=".loginandset.activity_tool_management"
             android:exported="false" />
         <activity
@@ -30,13 +32,13 @@
             android:name=".item_user"
             android:exported="false" />
         <activity
-            android:name=".loginandset.EmployeeListActivity"
+            android:name=".loginandset.activity_employee_List"
             android:exported="false" />
         <activity
-            android:name=".loginandset.ManageActivity"
+            android:name=".loginandset.activity_manage"
             android:exported="false" />
         <activity
-            android:name=".loginandset.EmployeeManagementActivity"
+            android:name=".loginandset.activity_employee_management"
             android:exported="false" />
         <activity
             android:name=".loginandset.LoginActivity"

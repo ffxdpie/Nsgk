@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">工况计算测试</string>
-    <string name="vsion">版本 0.2 2024/11/26</string>
+    <string name="vsion">版本 0.3 2025/1/05</string>
     <string name="button1">工况选择</string>
     <string name="button2">工况详情</string>
     <string name="button3">工况图显示</string>
@@ -45,5 +45,14 @@
     <string name="labelWeight">重量</string>
     <string name="labelLength">长度</string>
     <string name="labelHeight">高度</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>

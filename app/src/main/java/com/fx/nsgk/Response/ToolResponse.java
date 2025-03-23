@@ -7,6 +7,12 @@ public class ToolResponse {
 
     private String expiry_time;
     private boolean is_active;
+    private String model;
+    private String quantity;
+
+    public ToolResponse() {
+    }
+
 
     public String getName() {
         return name;
@@ -46,5 +52,21 @@ public class ToolResponse {
 
     public void setIs_active(boolean is_active) {
         this.is_active = is_active;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 }

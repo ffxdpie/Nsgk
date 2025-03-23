@@ -23,7 +23,7 @@
         android:textSize="16sp"
         android:layout_marginBottom="8dp" />
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/etToolname"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="请输入工具名称"
@@ -56,10 +56,56 @@
         android:textSize="16sp"
         android:layout_marginBottom="8dp" />
     <EditText
-        android:id="@+id/etTime"
+        android:id="@+id/etsetup_time"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="请输入启用时间"
+        android:inputType="date"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="过期时间:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/etexpiry_time"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入过期时间"
+        android:inputType="date"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="规格:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/etmodel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入规格"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数量:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/etquantity"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入数量"
         android:padding="10dp"
         android:textSize="16sp"
         android:layout_marginBottom="16dp" />
