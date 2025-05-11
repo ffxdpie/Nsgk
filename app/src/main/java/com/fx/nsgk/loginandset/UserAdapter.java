@@ -31,8 +31,8 @@ import retrofit2.Response;
 
 public class UserAdapter extends BaseAdapter {
 
-    private Context context;
-    private List<UserResponse> users;
+    private final Context context;
+    private final List<UserResponse> users;
 
 
     public UserAdapter(Context context, List<UserResponse> users) {
@@ -69,6 +69,9 @@ public class UserAdapter extends BaseAdapter {
         nameTextView.setText(user.getName());
         roleTextView.setText(user.getRole());
 
+        convertView.setOnClickListener(v -> {
+            Toast.makeText(context, "测试功能,未添加 " , Toast.LENGTH_SHORT).show();
+        });
 
         convertView.setOnLongClickListener(v -> {
             // 创建 PopupMenu 对象，并将其锚定到当前视图（v）

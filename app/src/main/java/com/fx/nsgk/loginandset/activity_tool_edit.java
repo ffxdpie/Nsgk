@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fx.nsgk.R;
@@ -89,11 +90,11 @@ public class activity_tool_edit extends AppCompatActivity {
 
             // 创建 Retrofit 实例
             ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-
+            //putTool 更新工具
             Call<ToolResponse> call = apiService.putTool(name,toolRequest,"Bearer " + token);
             call.enqueue(new Callback<ToolResponse>() {
                 @Override
-                public void onResponse(Call<ToolResponse> call, Response<ToolResponse> response) {
+                public void onResponse(@NonNull Call<ToolResponse> call, @NonNull Response<ToolResponse> response) {
                     if (response.isSuccessful()) {
                         ToolResponse toolResponse = response.body();
                         if (toolResponse != null) {

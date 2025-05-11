@@ -64,6 +64,52 @@
         android:layout_height="48dp"
         android:entries="@array/spinnerRole"
         android:layout_marginBottom="16dp" />
+
+    <!-- 住址输入框 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="住址:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <!-- 住址 -->
+    <EditText
+        android:id="@+id/etposition"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入住址"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电话:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/etphoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入电话号码"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+    <!-- 住址输入框 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="生日:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/etbirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入出生日期"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
     <!-- 确认按钮 -->
     <Button
         android:id="@+id/btnSubmit"

@@ -1,6 +1,5 @@
 package com.fx.nsgk.loginandset;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,35 +15,30 @@ import com.fx.nsgk.Response.ApiService;
 import com.fx.nsgk.Response.RetrofitClient;
 import com.fx.nsgk.Response.UserRequest;
 import com.fx.nsgk.Response.UserResponse;
+import com.fx.nsgk.databinding.ActivityEmployeeManagementBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class activity_employee_management extends AppCompatActivity {
-
-    private EditText etUsername, etPassword;
-    Button btnSubmit;
+    private ActivityEmployeeManagementBinding binding;
 
     private Spinner spinnerRole;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_management);
-
-        // 初始化界面元素
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
-        spinnerRole = findViewById(R.id.spinnerRole);
-        btnSubmit = findViewById(R.id.btnSubmit);
-
-
+        binding = ActivityEmployeeManagementBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         // 设置确认按钮点击事件
-        btnSubmit.setOnClickListener(v -> {
+        binding.btnSubmit.setOnClickListener(v -> {
             // 获取输入的用户名、密码和角色
-            String username = etUsername.getText().toString();
-            String password = etPassword.getText().toString();
-            String role = spinnerRole.getSelectedItem().toString();
+            String username = binding.etUsername.getText().toString();
+            String password = binding.etPassword.getText().toString();
+            String role = binding.spinnerRole.getSelectedItem().toString();
+            String position = binding.etposition.getText().toString();
+            String phoneNumber = binding.etphoneNumber.getText().toString();
+            String birthDate = binding.etbirthDate.getText().toString();
             Log.d("role", "onCreate: "+role);
 
             // 校验输入
@@ -63,7 +57,7 @@ public class activity_employee_management extends AppCompatActivity {
             }
 
             // 创建用户请求体
-            UserRequest userRequest = new UserRequest(username, password, role);
+            UserRequest userRequest = new UserRequest(username, password, role, position, phoneNumber, birthDate);
 
             // 创建 Retrofit 实例
             ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);

@@ -28,9 +28,9 @@
         <activity
             android:name=".loginandset.activity_tools_list"
             android:exported="false" />
-        <activity
-            android:name=".item_user"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".item_user"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".loginandset.activity_employee_List"
             android:exported="false" />

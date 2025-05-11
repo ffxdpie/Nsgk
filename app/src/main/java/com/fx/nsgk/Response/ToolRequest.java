@@ -1,6 +1,9 @@
 package com.fx.nsgk.Response;
-
+/**
+ * ToolRequest 类表示工具请求的详细信息。
+ */
 public class ToolRequest {
+
     private String name;
     private String description;
     private String setup_time;
@@ -8,6 +11,17 @@ public class ToolRequest {
 
     private String model;
     private String quantity;
+
+    /**
+     * 工具请求构造函数
+     *
+     * @param name        工具名称
+     * @param description 工具描述
+     * @param setup_time  设置时间
+     * @param expiry_time 过期时间
+     * @param model       工具型号
+     * @param quantity    工具数量
+     */
 
     public ToolRequest(String name, String description , String setup_time, String expiry_time, String model, String quantity) {
         this.name = name;

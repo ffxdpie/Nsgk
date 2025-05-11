@@ -1,5 +1,7 @@
 package com.fx.nsgk.Response;
-
+/**
+ * ToolRequest 类表示工具响应的详细信息。
+ */
 public class ToolResponse {
     private String name;
     private String description;
@@ -10,8 +12,6 @@ public class ToolResponse {
     private String model;
     private String quantity;
 
-    public ToolResponse() {
-    }
 
 
     public String getName() {
