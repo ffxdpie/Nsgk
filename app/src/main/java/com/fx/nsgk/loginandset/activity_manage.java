@@ -15,7 +15,6 @@ import com.fx.nsgk.Response.MeInfoCallback;
 import com.fx.nsgk.Response.UserResponse;
 
 public class activity_manage extends AppCompatActivity {
-    private MeInfo meInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class activity_manage extends AppCompatActivity {
         Button btnViewEmployees = findViewById(R.id.btnViewEmployees);
         Button btnViewTools = findViewById(R.id.btnViewtools);
 
-        meInfo = new MeInfo(this);
+        MeInfo meInfo = new MeInfo(this);
         // 获取用户信息
         meInfo.getMe(new MeInfoCallback() {
             @Override

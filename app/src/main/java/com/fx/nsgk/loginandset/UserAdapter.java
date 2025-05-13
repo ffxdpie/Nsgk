@@ -1,16 +1,12 @@
 package com.fx.nsgk.loginandset;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +16,6 @@ import androidx.annotation.NonNull;
 import com.fx.nsgk.R;
 import com.fx.nsgk.Response.ApiService;
 import com.fx.nsgk.Response.RetrofitClient;
-import com.fx.nsgk.Response.ToolResponse;
 import com.fx.nsgk.Response.UserResponse;
 
 import java.util.List;
@@ -70,7 +65,10 @@ public class UserAdapter extends BaseAdapter {
         roleTextView.setText(user.getRole());
 
         convertView.setOnClickListener(v -> {
-            Toast.makeText(context, "测试功能,未添加 " , Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "详细信息 "+nameTextView.getText() , Toast.LENGTH_SHORT).show();
+            Intent intent = getIntent(activity_employee_details.class,user);
+            context.startActivity(intent);
+
         });
 
         convertView.setOnLongClickListener(v -> {
@@ -80,13 +78,13 @@ public class UserAdapter extends BaseAdapter {
             popupMenu.getMenuInflater().inflate(R.menu.menu_employee_options, popupMenu.getMenu());
             // 设置菜单项点击事件监听器
             popupMenu.setOnMenuItemClickListener(item -> {
-                SharedPreferences sharedPreferences = context.getSharedPreferences("user_prefs", context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
                 String role = sharedPreferences.getString("role", "");
                 if (item.getItemId() == R.id.menu_renew_option) {
                     if(role.equals("管理员")){
                         Toast.makeText(context, "编辑 " + nameTextView.getText(), Toast.LENGTH_SHORT).show();
                         // 登录成功，跳转到主界面
-                        Intent intent = getIntent(user);
+                        Intent intent = getIntent(activity_employee_edit.class,user);
                         context.startActivity(intent);
                     }else {
                         Toast.makeText(context, "无权限 " , Toast.LENGTH_SHORT).show();
@@ -109,12 +107,13 @@ public class UserAdapter extends BaseAdapter {
         return convertView;
     }
     @NonNull
-    private Intent getIntent(UserResponse user) {
-        Intent intent = new Intent(context, activity_employee_edit.class);
+    private Intent getIntent(Class<?> targetActivity, UserResponse user) {
+        Intent intent = new Intent(context, targetActivity);
         intent.putExtra("user_name", user.getName());
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
     }
+
 
     private void deleteUser(int position) {
         UserResponse user = users.get(position);

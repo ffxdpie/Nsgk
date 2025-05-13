@@ -10,7 +10,7 @@ import retrofit2.Response;
 
 public class MeInfo {
 
-    private Context context;
+    private final Context context;
 
     // 构造函数接受 Context
     public MeInfo(Context context) {

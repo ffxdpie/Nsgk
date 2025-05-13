@@ -1,6 +1,5 @@
 package com.fx.nsgk.loginandset;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 import android.widget.PopupMenu;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 
 import com.fx.nsgk.R;
@@ -30,8 +28,8 @@ import retrofit2.Response;
 
 public class ToolAdapter extends BaseAdapter {
 
-    private Context context;
-    private List<ToolResponse> tools;
+    private final Context context;
+    private final List<ToolResponse> tools;
 
     public ToolAdapter(Context context, List<ToolResponse> tools) {
         this.context = context;
@@ -69,7 +67,9 @@ public class ToolAdapter extends BaseAdapter {
         roleTextView.setText(tool.getDescription());
 
         convertView.setOnClickListener(v -> {
-
+            Toast.makeText(context, "详细信息 "+nameTextView.getText() , Toast.LENGTH_SHORT).show();
+            Intent intent = getIntent(activity_tool_details.class,tool);
+            context.startActivity(intent);
         });
         convertView.setOnLongClickListener(v -> {
             // 创建 PopupMenu 对象，并将其锚定到当前视图（v）
@@ -78,12 +78,12 @@ public class ToolAdapter extends BaseAdapter {
             popupMenu.getMenuInflater().inflate(R.menu.menu_employee_options, popupMenu.getMenu());
             // 设置菜单项点击事件监听器
             popupMenu.setOnMenuItemClickListener(item -> {
-                SharedPreferences sharedPreferences = context.getSharedPreferences("user_prefs", context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
                 String role = sharedPreferences.getString("role", "");
                 if (item.getItemId() == R.id.menu_renew_option) {
                     if(role.equals("工具员")){
                         Toast.makeText(context, "编辑 " + nameTextView.getText(), Toast.LENGTH_SHORT).show();
-                        Intent intent = getIntent(tool);
+                        Intent intent = getIntent(activity_tool_details.class,tool);
                         context.startActivity(intent);
                     }else {
                         Toast.makeText(context, "无权限 " , Toast.LENGTH_SHORT).show();
@@ -109,8 +109,8 @@ public class ToolAdapter extends BaseAdapter {
     }
 
     @NonNull
-    private Intent getIntent(ToolResponse tool) {
-        Intent intent = new Intent(context, activity_tool_edit.class);
+    private Intent getIntent(Class<?> targetActivity,ToolResponse tool) {
+        Intent intent = new Intent(context, targetActivity);
         intent.putExtra("tool_name", tool.getName());
         intent.putExtra("tool_description", tool.getDescription());
         intent.putExtra("tool_setup_time", tool.getSetup_time());

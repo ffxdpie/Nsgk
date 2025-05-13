@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".loginandset.activity_tool_details"
+            android:exported="false" />
+        <activity
+            android:name=".loginandset.activity_employee_details"
+            android:exported="false" />
+        <activity
             android:name=".loginandset.activity_employee_edit"
             android:exported="false" />
         <activity
@@ -27,10 +33,9 @@
             android:exported="false" />
         <activity
             android:name=".loginandset.activity_tools_list"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".item_user"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".item_user" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".loginandset.activity_employee_List"
             android:exported="false" />

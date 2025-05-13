@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_tool_details"
+tools:context=".loginandset.activity_tool_details"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
+
+<!-- 标题 -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="工具详情"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_gravity="center"
+    android:paddingBottom="20dp" />
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="工具名:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etToolname"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="用途:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etuse"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="登记时间:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etsetup_time"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="过期时间:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etexpiry_time"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="规格:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etmodel"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="数量:"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp" />
+<TextView
+    android:id="@+id/etquantity"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="10dp"
+    android:textSize="16sp"
+    android:layout_marginBottom="16dp" />
+
+
+</LinearLayout>

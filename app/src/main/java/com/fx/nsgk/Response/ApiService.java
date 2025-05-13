@@ -73,7 +73,7 @@ public interface ApiService {
     );
 
     //获取所有工具
-    @GET("tools")  // 获取用户列表的接口
+    @GET("tools")  // 获取工具列表的接口
     Call<List<ToolResponse>> getTools(
             @Query("skip") int skip,  // 分页参数 skip
             @Query("limit") int limit,  // 分页参数 limit
